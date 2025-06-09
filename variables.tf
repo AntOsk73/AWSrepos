@@ -23,9 +23,5 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
-variable "key_name" {
-  description = "Key pair name"
-  default = aws_key_pair.generated.key_name
-}
 
 
