@@ -4,3 +4,9 @@ variable "AWS_ACCESS_KEY"{
 variable "AWS_CLIENT_SECRET"{
   type=string
 }
+
+variable "bucket_names" {
+  type    = list(string)
+  default = ["Noninna_bucket-1", "900_bucket-2", "bordel_bucket-3", "eaton_bucket-4", "stjacques_bucket-5"]
+}
+
