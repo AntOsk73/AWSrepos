@@ -1,11 +1,11 @@
-output "instance_ids" {
-  value = aws_instance.ec2_instances[*].id
+output "bucket_name" {
+  value = aws_s3_bucket.my_bucket.bucket
+}
+output "private_key_pem" {
+  value     = tls_private_key.ec2_key.private_key_pem
+  sensitive = true
 }
 
-output "public_ips" {
-  value = aws_instance.ec2_instances[*].public_ip
-}
-
-output "instance_names" {
-  value = aws_instance.ec2_instances[*].tags.Name
+output "public_ip" {
+  value = aws_instance.mcitsami.public_ip
 }
