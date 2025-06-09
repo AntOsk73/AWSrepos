@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "buckets" {
+/*resource "aws_s3_bucket" "buckets" {
   for_each = toset(var.bucket_names)
 
   bucket = each.value
@@ -7,4 +7,4 @@ resource "aws_s3_bucket" "buckets" {
     Name        = each.value
     Environment = "Dev"
   }
-}
+}*/
