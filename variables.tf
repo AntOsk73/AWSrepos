@@ -16,13 +16,19 @@ variable "instance_count" {
 
 variable "ami_id" {
   description = "Amazon Machine Image ID"
-  default = "ami-0c7217cdde317cfec"  # Amazon Linux 2023 AMI
 }
 
 variable "instance_type" {
   default = "t2.micro"
 }
 
+variable "key_name" {
+  description = "Key pair name"
+}
+
+variable "security_group_name" {
+  default = "terraform-sg"
+}
 
 
 
