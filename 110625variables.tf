@@ -1,4 +1,4 @@
-variable "cluster_name" {
+/*variable "cluster_name" {
   description = "Name of the ECS cluster"
   type        = string
   default     = "my-ecs-cluster"
@@ -26,4 +26,16 @@ variable "container_port" {
   description = "Port exposed by the container"
   type        = number
   default     = 80
+}*/
+
+variable "ecs_clusters" {
+  description = "List of ECS clusters to create"
+  type        = map(object({
+    cluster_name = string
+    capacity_provider = string
+  }))
+  default = {
+    "cluster1" = { cluster_name = "prod-cluster", capacity_provider = "FARGATE" }
+    "cluster2" = { cluster_name = "dev-cluster", capacity_provider = "EC2" }
+  }
 }
