@@ -10,10 +10,10 @@ output "public_ip" {
   value = aws_instance.mcitsami.public_ip
 }
 
-output "ecs_service_name" {
+/*output "ecs_service_name" {
   description = "Name of the ECS service"
   value       = aws_ecs_service.ecs_service.name
-}
+}*/
 
 /*output "task_definition_arn" {
   description = "ARN of the task definition"
