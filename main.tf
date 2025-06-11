@@ -1,4 +1,4 @@
-resource "aws_ecs_cluster" "ecs_cluster" {
+/*resource "aws_ecs_cluster" "ecs_cluster" {
   name = var.cluster_name
 }
 
@@ -27,4 +27,14 @@ resource "aws_ecs_service" "ecs_service" {
   task_definition = aws_ecs_task_definition.task_def.arn
   desired_count   = 1
   launch_type     = "FARGATE"
+}*/
+
+module "ecs_clusters" {
+  source = "./modules/ecs_cluster"
+  for_each = var.ecs_clusters
+
+  cluster_name      = each.value.cluster_name
+  capacity_provider = each.value.capacity_provider
 }
+
+
