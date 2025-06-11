@@ -19,3 +19,8 @@ output "task_definition_arn" {
   description = "ARN of the task definition"
   value       = aws_ecs_task_definition.task_def.arn
 }
+
+output "ecs_cluster_names" {
+  description = "Names of all ECS clusters created"
+  value       = { for k, v in module.ecs_clusters : k => v.cluster_name }
+}
