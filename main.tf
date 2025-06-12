@@ -4,12 +4,6 @@ provider "aws" {
   secret_key=var.AWS_CLIENT_SECRET
 }
 
-# Create the EC2 Key Pair
-resource "aws_key_pair" "my_key" {
-  key_name   = var.key_name
-  public_key = var.public_key
-}
-
 # Create Security Group for SSH
 resource "aws_security_group" "my_sg" {
   name        = var.security_group_name
