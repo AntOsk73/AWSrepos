@@ -26,7 +26,7 @@ resource "aws_security_group" "my_sg" {
   }
 }
 
-# Launch EC2 Instance with Key Pair & Security Group
+/*Launch EC2 Instance with Key Pair & Security Group
 resource "aws_instance" "my_ec2" {
   ami             = "ami-12345678"  # Replace with a valid AMI ID
   instance_type   = var.instance_type # Uses the variable from variables.tf
@@ -35,6 +35,18 @@ resource "aws_instance" "my_ec2" {
 
   tags = {
     Name = "MyTerraformInstance"
+  }
+}*/
+
+# Launch Multiple EC2 Instances Using `for_each` (Without SSH Key)
+resource "aws_instance" "my_ec2" {
+  for_each       = var.instance_names
+  ami            = "ami-12345678"
+  instance_type  = each.value
+  security_groups = [aws_security_group.my_sg.name]
+
+  tags = {
+    Name = each.key
   }
 }
 
