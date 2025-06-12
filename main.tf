@@ -4,7 +4,7 @@
   secret_key=var.AWS_CLIENT_SECRET
 }
 
-# Create Security Group for SSH
+/*# Create Security Group for SSH
 resource "aws_security_group" "my_sg" {
   name        = var.security_group_name
   description = "Allow SSH access"
