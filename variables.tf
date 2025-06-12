@@ -1,7 +1,7 @@
 variable "AWS_ACCESS_KEY"{
   type=string
 }
-variable "AWS_SECRET_KEY"{
+variable "AWS_CLIENT_SECRET"{
   type=string
 }
 
