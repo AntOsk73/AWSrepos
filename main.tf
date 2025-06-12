@@ -30,7 +30,7 @@ resource "aws_security_group" "my_sg" {
 resource "aws_instance" "my_ec2" {
   ami             = "ami-12345678"  # Replace with a valid AMI ID
   instance_type   = var.instance_type # Uses the variable from variables.tf
-  key_name        = aws_key_pair.my_key.key_name  # Attach SSH key
+  
   security_groups = [aws_security_group.my_sg.name]  # Assign security group
 
   tags = {
