@@ -3,7 +3,7 @@ output "aws_region_used" {
   value       = var.aws_region
 }
 
-output "instance_id" {
+/*output "instance_id" {
   description = "ID of the created EC2 instance"
   value       = aws_instance.my_ec2.id
 }
@@ -16,7 +16,7 @@ output "instance_public_ip" {
 output "security_group_id" {
   description = "ID of the security group"
   value       = aws_security_group.my_sg.id
-}
+}*/
 
 output "instance_ids" {
   description = "IDs of created EC2 instances"
