@@ -11,7 +11,7 @@ variable "aws_region" {
   default     = "us-east-1"  # This means if you don't pick, it'll go here.
 }
 
-variable "instance_type" {
+/*variable "instance_type" {
   description = "Type of EC2 instance"
   type        = string
   default     = "t2.micro"
@@ -21,6 +21,17 @@ variable "key_name" {
   description = "Name of the EC2 key pair"
   type        = string
   default     = "my-keypair"
+}*/
+
+variable "instance_names" {
+  description = "Names of EC2 instances"
+  type        = map(string)
+  default     = {
+    "Arzé"     = "t2.micro"
+    "Charble"  = "t2.micro"
+    "Nicolas"  = "t2.micro"
+    "Antoine"  = "t2.micro"
+  }
 }
 
 variable "security_group_name" {
@@ -28,6 +39,7 @@ variable "security_group_name" {
   type        = string
   default     = "my-security-group"
 }
+
 
 
 
