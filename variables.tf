@@ -17,5 +17,22 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
+variable "key_name" {
+  description = "Name of the EC2 key pair"
+  type        = string
+  default     = "my-keypair"
+}
+
+variable "public_key" {
+  description = "Public key for SSH access"
+  type        = string
+}
+
+variable "security_group_name" {
+  description = "Name of the security group"
+  type        = string
+  default     = "my-security-group"
+}
+
 
 
